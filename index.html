@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+	
+<title>SOGO HOTEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="main.css">
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+     <!---Header--->
+<div class="container">
+<div id="myDiv"><img src="images/main.jpg" alt="main" align="middle"   style="width:100%;"></div>
+<div class="top-left"><h1 style="font-size:3vw;">SOGO HOTEL</h1></div>
+<!---main navigation--->
+<div class="top-right">
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">AboutUs</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="contact.html">ContactUs</a>
+	 <a href="event.html">Events</a>
+  </div>
+</div>
+<div class="ham">
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
+</div>
+<div class="centered">
+<h1 style="font-size:3vw;">WELCOME TO FIVE <span>★</span> HOTEL</h1>
+<p style="font-size:3vw;">A BEST PLACE TO STAY</p>
+</div>
+
+</div>
+
+
+
+</head>
+<body>
+<div class="text1">
+<h1 style="font-size:3vw;">Welcome to SOGO Hotel</h1></div>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="images/img1.jpg" style="width:100%">
+  <div class="text">Entrance</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="images/img2.jpg" style="width:100%">
+  <div class="text">View</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="images/img3.jpg" style="width:100%">
+  <div class="text">Reception</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="images/img4.jpg" style="width:100%" >
+  <div class="text">Dining</div>
+</div>
+
+
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span> 
+</div>
+<br>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+</script><br><br>
+<!---video--->
+<centre>
+ <div class="videowrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bjy94B-8s6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</centre>
+
+
+		<!-----footer---->
+
+<!--footer-->
+		<div class="footer">
+			<div class="inner-footer">
+			<div class="footer-items">
+				<h1>Tourist Attraction</h1>
+					<p>
+						 A place of interest where tourists visit, typically for its inherent or an exhibited natural or cultural value, historical significance, natural or built beauty, offering leisure and amusement.Enjoy the msot scenaric view at our hotel. A place to be visited over and over again
+					</p>
+			</div>
+			
+			<div class="footer-items">
+				<h2>Quick linkss</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="index.html"><li>Home</li></a>
+						<a href="contact.html"><li>Contact Us</li></a>
+						<a href="about.html"><li>About Us</li></a>
+						<a href="rooms.html"><li>Rooms</li></a>
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Destinations</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="#"><li>Airline and Frequent flyer partners</li></a>
+						<a href="#"><li>Site Map</li></a>
+						<a href="#"><li>Policy</li></a>
+						<a href="#"><li>Accessibility</li></a>
+						<a href="#"><li>Terms of use</li></a>
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Contact Us</h2>
+				<div class="border"></div>
+					<ul>
+						<li><i class="fa fa-map-marker" aria-hidden="true">marine drive, Mumbai, Maharashtra 400002</i></li>
+						<li><i class="fa fa-phone" aria-hidden="true">022-225-678</i></li>
+						<li><i class="fa fa-envelope" aria-hidden="true">asiya.khan@sakec.ac.in</i></li>
+					</ul>
+				<div class="social-media">
+					<a href="index.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+
+					
+				</div>
+			</div>
+			</div>
+			<div class="footer-bottom">
+			Copyrighto & copy;Educature 2019.All right reserved.
+			
+			</div>
+		</div>
+		
+</body>
+
+
+</html>

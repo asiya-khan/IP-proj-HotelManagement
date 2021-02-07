@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="css/aboutus.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<style>
+@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
+</style>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Events",50,50);
+
+    function CreateTableFromJSON() {
+        var myBooks = [
+            {
+                "Serial number": "1",
+                "Branch": "Pune",
+                "Manager": "Amisha Das",
+                "Description" :"A hotel known for its facilities around the hotel",
+				"Ratings":"3.5 stars",
+				
+				
+				
+            },
+            {
+                "Serial number": "2",
+                "Branch": "Hyderabad",
+                "Manager": "Riya Bhanushali",
+                "Description" :"A hotel very popular for its hospitality and well maintained service",
+				"Ratings":"4.5 stars",
+				
+            },
+            {
+                "Serial number": "3",
+                "Branch": "Goa",
+                "Manager": "Keval Mehta",
+                "Description" :"An enjoyable scenic view as the hotel located next to beach.",
+				"Ratings":"5 stars",
+            },
+			{
+                "Serial number": "4",
+                "Branch": "Dhanali Modi",
+                "Manager": "Banglore",
+                "Description" :"One of the famous hotels of the city usually known for its services and hospitality.",
+				"Ratings":"5 stars",
+            }
+        ]
+
+		
+
+        // EXTRACT VALUE FOR HTML HEADER. 
+        // ('Serial number', 'Category', 'Fields' and 'Price')
+        var col = [];
+        for (var i = 0; i < myBooks.length; i++) {
+            for (var key in myBooks[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+	
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+		
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < myBooks.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = myBooks[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+
+		
+</script>
+
+<title>SOGO HOTEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="container">
+<div id="myDiv"><img src="images/main.jpg" alt="main" align="middle" width="100%" height="auto"></div>
+<div class="top-left"><h1 style="font-size:3vw;">SOGO HOTEL</h1></div>
+<div class="centered">
+<p style="font-size:5vw;">ABOUT US</p>
+<p style="font-size:2vw;"><font color="#DAA520">HOME</font> . ABOUT US</p>
+</div>
+ <div class="top-right">
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">AboutUs</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="contact.html">ContactUs</a>
+	 <a href="event.html">Events</a>
+  </div>
+</div>
+<div class="ham">
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
+</div>
+</div>
+
+</head>
+<body>
+<div class="welcome"><h1 style="font-size:3vw;">Welcome!</h1></div>
+<div class="image">
+	
+	<font color="#DAA520"><p style="font-size:2vw;">Welcome to Sogo Hotel. Enjoy the luxurious facilities of our hotel. The beautiful view of our hotel will always be a mood buster to you. Experienc the serenity and celebrate the joy of this weather.Visit Sogo Hotel!</p></font>
+
+	<img  src="images/welcome.jpg" alt="" height="auto" style="width:50%;">
+	
+	</div>
+	
+	<br>
+<h2><center><b>LEADERSHIP</b></certer></h2><br>
+<div class="row">
+<div class="column">
+<div class="container">
+  <img src="images/image1.jpg" alt="" class="images">
+  <div class="overlay">
+    <div class="text">“Even the all-powerful Pointing has no control about the blind texts it is almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.”
+   </div>
+  </div>
+</div>
+</div>
+
+ <div class="column">
+ <div class="container">
+  <img src="images/image2.jpg" alt="" class="images">
+  <div class="overlay">
+    <div class="text">“Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.”
+</div>
+  </div>
+</div>
+</div>
+
+ <div class="column">
+ <div class="container">
+  <img src="images/image3.jpg" alt="" class="images">
+  <div class="overlay">
+    <div class="text">“Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.”
+</div>
+  </div>
+</div>
+</div>
+</div>
+
+<br>
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="button" class="btn" onclick="CreateTableFromJSON()" value="Other Branches" />
+   <br>
+   <br>
+    <p id="showData"></p>
+</div><br><br>
+<!-----footer---->
+<div class="footer">
+			<div class="inner-footer">
+			<div class="footer-items">
+				<h1>Tourist Attraction</h1>
+					<p>
+						 A place of interest where tourists visit, typically for its inherent or an exhibited natural or cultural value, historical significance, natural or built beauty, offering leisure and amusement.Enjoy the msot scenaric view at our hotel. A place to be visited over and over again
+					</p>
+			</div>
+			
+			<div class="footer-items">
+				<h2>Quick linkss</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="index.html"><li>Home</li></a>
+						<a href="contact.html"><li>Contact Us</li></a>
+						<a href="about.html"><li>About Us</li></a>
+						<a href="rooms.html"><li>Rooms</li></a>
+						
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Destinations</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="#"><li>Airline and Frequent flyer partners</li></a>
+						<a href="#"><li>Site Map</li></a>
+						<a href="#"><li>Policy</li></a>
+						<a href="#"><li>Accessibility</li></a>
+						<a href="#"><li>Terms of use</li></a>
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Contact Us</h2>
+				<div class="border"></div>
+					<ul>
+						<li><i class="fa fa-map-marker" aria-hidden="true">marine drive, Mumbai, Maharashtra 400002</i></li>
+						<li><i class="fa fa-phone" aria-hidden="true">022-225-678</i></li>
+						<li><i class="fa fa-envelope" aria-hidden="true">asiya.khan@sakec.ac.in</i></li>
+					</ul>
+				<div class="social-media">
+					<a href="index.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+
+					
+				</div>
+			</div>
+			</div>
+			<div class="footer-bottom">
+			Copyrighto & copy;Educature 2019.All right reserved.
+			
+			</div>
+		</div>
+
+</body>
+
+</html>

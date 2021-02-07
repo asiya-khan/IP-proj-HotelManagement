@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<script>
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,x,xx,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Title</th><th>Artist</th><th>Country</th><th>Date</th><th>Price</th></tr>";
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("TITLE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      xx=x[i].getElementsByTagName("ARTIST");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+		xx=x[i].getElementsByTagName("COUNTRY");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+		xx=x[i].getElementsByTagName("DATE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+		
+		xx=x[i].getElementsByTagName("PRICE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+		txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<style>
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+</style>
+
+<title>SOGO HOTEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="css/room.css">
+<div class="container">
+<div id="myDiv"><img src="images/main.jpg" alt="main" align="middle" width="100%" height="auto"></div>
+<div class="top-left"><h1 style="font-size:3vw;">SOGO HOTEL</h1></div>
+<div class="centered">
+<p style="font-size:5vw;">EVENTS</p>
+<p style="font-size:2vw;"><font color="#DAA520">HOME</font> . EVENTS</p>
+</div>
+ <div class="top-right">
+  <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <a href="index.html">Home</a>
+    <a href="aboutus.html">AboutUs</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="contact.html">ContactUs</a>
+    <a href="event.html">Events</a>
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+</div>
+</head>
+<body>
+<h1 style="text-align:center;"> SOME ALREADY HELD EVENTS <h1>
+<div class="row">
+  <div class="column">
+    
+        <img class="img-responsive" src="images/marriage.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">Marriage</p></font>
+		
+       </div> 
+  <div class="column">
+    
+        <img class="img-responsive" src="images/cultural.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">Cultural</p></font>
+		
+     </div>
+  <div class="column">
+    
+        <img class="img-responsive" src="images/dj.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">DJ Night</p></font>
+		
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    
+        <img class="img-responsive" src="images/teacher.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">Teachers Day</p></font>
+		
+     </div>
+  <div class="column">
+    
+        <img class="img-responsive" src="images/creative.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">Creative Events</p></font>
+		
+   </div>
+  <div class="column">
+   
+        <img class="img-responsive" src="images/holi.jpg" alt="" style="width:100%">
+		<font color="#DAA520"><p style="font-size:3vw;">Holi</p></font>
+		
+   </div>
+</div>
+<div id="txtCDInfo">
+
+<button class="button" onclick="loadXMLDoc('abc.xml')">UPCOMING EVENTS</button>
+</div>
+<br>
+<!--footer-->
+		<div class="footer">
+			<div class="inner-footer">
+			<div class="footer-items">
+				<h1>Tourist Attraction</h1>
+					<p>
+						 A place of interest where tourists visit, typically for its inherent or an exhibited natural or cultural value, historical significance, natural or built beauty, offering leisure and amusement.Enjoy the msot scenaric view at our hotel. A place to be visited over and over again
+					</p>
+			</div>
+			
+			<div class="footer-items">
+				<h2>Quick linkss</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="index.html"><li>Home</li></a>
+						<a href="contact.html"><li>Contact Us</li></a>
+						<a href="about.html"><li>About Us</li></a>
+						<a href="rooms.html"><li>Rooms</li></a>
+						
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Destinations</h2>
+				<div class="border"></div>
+					<ul>
+						<a href="#"><li>Airline and Frequent flyer partners</li></a>
+						<a href="#"><li>Site Map</li></a>
+						<a href="#"><li>Policy</li></a>
+						<a href="#"><li>Accessibility</li></a>
+						<a href="#"><li>Terms of use</li></a>
+					</ul>
+			</div>
+			<div class="footer-items">
+				<h2>Contact Us</h2>
+				<div class="border"></div>
+					<ul>
+						<li><i class="fa fa-map-marker" aria-hidden="true">marine drive, Mumbai, Maharashtra 400002</i></li>
+						<li><i class="fa fa-phone" aria-hidden="true">022-225-678</i></li>
+						<li><i class="fa fa-envelope" aria-hidden="true">asiya.khan@sakec.ac.in</i></li>
+					</ul>
+				<div class="social-media">
+					<a href="index.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="index.html"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+
+					
+				</div>
+			</div>
+			</div>
+			<div class="footer-bottom">
+			Copyrighto & copy;Educature 2019.All right reserved.
+			
+			</div>
+		</div>
+</body>
+</html>

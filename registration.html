@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<title>Registration form</title>
+ <link rel="stylesheet" text="text/css" href="registration.css">
+</head>
+<body>
+ <div class="box">
+  <h1>Registration</h1>
+  <form id="registration" onsubmit="return validate(this)" action="register.php" method="post">
+     Name<br>
+     <input type="text" name="fname" id="button" placeholder="Enter your name"><br>
+     <br>
+     User Name<br>
+     <input type="text" name="uname" id="button" placeholder="Enter your user name"><br>
+     <br>
+     Email<br>
+     <input type="text" name="email" id="button" placeholder="Enter your email"><br>
+     <br>
+     Telephone<br>
+     <input type="text" name="pnum" id="phone" placeholder="Enter your mobile number"><br>
+     <br>
+     
+     Password<br>
+     <input type="password" name="pwd" id="button" placeholder="Enter your Password"><br>
+     <br>
+     Repeat-Password<br>
+     <input type="password" name="rpwd" id="button" placeholder="Enter your Repeat-Password"><br>
+     <br>
+     <input type="Submit" value="Register" id="but"><br>
+	 <a href="login.html">Already registered?</a>
+   </form>
+   
+  </div>
+ <script type="text/javascript" src="psw.js"></script>
+</body>
+</html>
